@@ -1,0 +1,141 @@
+﻿Interfaces in Java
+
+	Interfaces in java are referred to as the blueprints of a class. It has static constants and abstract methods. There can only be abstract methods in Java interfaces, not the method body. It cannot be instantiated just like the abstract class. It is declared by the interface keyword, and all the methods in it are declared with an empty body. Class that implements interface must implement all the methods declared in it. 
+
+Uses:
+--> Used to achieve data abstraction
+--> It supports multiple inheritance
+
+Syntax:
+   interface <interface_name>{
+	........
+	.........}
+
+Note: By default, java compiler adds public and abstract keywords before interface methods. And public, static final keywords before data members.
+
+--> class extends another class, interface extends another interface, but a class implements an interface.
+Example:
+   interface print{
+	void show();
+}
+
+class A implements print{
+	public void print(){
+		System.out.println(“hello world.”);
+}
+public static void main(){
+	A obj= new A();
+	a.show();
+}
+
+Output:
+hello world.
+
+--> In real cases, interfaces are defined by someone else but their implementation is provided by different users. And is used by someone else.
+
+For example:
+
+interface Shape{					// interface declaration by first user
+	void sides();
+}
+
+class square implements shape{			//implementation by second user
+	public void sides(){
+	System.out.println(“four”);
+}}
+class circle implements shape{
+	public void sides(){
+	System.out.println(“zero”);
+}}
+class Test{					// Usage by third user
+	public static void main(){
+		Shape s= new square();
+		s.sides();
+}}
+
+Output:
+four
+Multiple inheritence in java
+
+If a class implements multiple interfaces or an interface extends multiple interfaces, then it is multiple inheritence using interfaces in java. For example:
+
+interface A{
+	void print();}
+interface B{
+	void show();}
+class C implements A,B{					//Class implementing multiple interfaces
+	public void print(){
+		System.out.println(“message1”);}
+	public void show(){
+		System.out.println(“message2”);}
+	public static void main(){
+		C obj= new C();
+		obj.print();
+		obj.show();
+}}
+
+Output:
+message1
+message2
+
+Note:- Multiple inheritence is not supported by classes because of ambiguity, while in case of interfaces, there is no ambiguity because its implementation is provided by the implementation class.
+
+--> We can represent multiple inheritence with the help of interfaces, known as interface inheritance. For example:
+
+interface Printable{
+void print();
+}
+interface Showable extends Printable{
+void show();
+}
+class TestInterface4 implements Showable{
+public void print()
+{System.out.println("Hello");}
+public void show()
+{System.out.println("Hi");}
+
+public static void main(String args[]){
+TestInterface4 obj= new TestInterface4();
+obj.print();
+obj.show();
+}}
+
+Output:
+Hello
+Hi
+
+Nested Interfaces in Java
+
+An interface inside another interface is known as nested interface. The nested interfaces are used to group related interfaces so that they can be easy to maintain. The nested interface must be referred to by the outer interface or class. It can't be accessed directly. Example:
+interface A{
+	void msg();
+	interface B{
+		void print();}}
+
+Sample:
+
+interface Showable{
+ 	void show();
+              interface Message{
+void msg();
+}
+}
+class TestNestedInterface1 implements Showable.Message{
+public void msg(){System.out.println("Nested interface");}
+
+public static void main(String args[]){
+Showable.Message message=new TestNestedInterface1();                                               
+message.msg();
+}}
+
+Output:
+Nested interface
+
+
+	
+
+
+
+
+
+         	
