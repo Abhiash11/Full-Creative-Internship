@@ -1,0 +1,35 @@
+﻿Data-types In Java
+	Datatypes specify the size and value that can be stored in a variable. There are two types of datatypes in Java:
+
+i) Primitive: They include boolean, int, short, long, float, etc.
+ii) Non-primitive: They include classes, arrays, string.
+
+Primitive Datatypes
+	A primitive data type specifies the size and type of variable values, and it has no additional methods. They are the building blocks and the most basic types of data in Java. In Java, all the variables must be declared before using. That is why we need to declare it's type and name. There are 8 types of primitive datatypes:
+
+     --> Boolean Datatype: It is used to store only two possible values: true and false. This datatype is used for simple true/false conditions. It specifies only 1 bit of information and has a default value as 'false'. 
+	Example: boolean ans= false;
+   
+   -->Byte Datatype: It has default size of 8 bit or 1 byte and has a default value 0. It's minimum value  is -128 and maximum value is 127. It is used to save memory in large arrays and it saves space as it is 4 times smaller than int.
+	Example: byte q=20;
+		  byte e= -10;
+
+   --> Short Datatype: It has a default size of 16 bit or  2 bytes. And has a default value of 0. it has a minimum value of -32,768 and maximum value of 32,767. it is also used to save memory as it is 2 times smaller than int. 
+	Example: short a= 23000;
+		  short b= -7000;
+
+   --> Int datatype: It has a default value of 0 and has a size of 32 bits or 4 bytes. Its minimum value is  –2^31 and maximum value is 2^31 -1. It is generally used as default datatype for integral values. 
+	Example: int a=6, b= -298; 
+
+   --> Long Datatype: It has a default value 0L. And has a size of 64 bits or 8 bytes. Its minimum value is -2^63 and maximum value of 2^63 – 1. It is generally used when we need range of values more than that provided by integer datatype. 
+	Example: long c= 10000L;
+		  long h= -450000L
+
+   --> Float Datatype: It has a default value of 0.0f and has a size of 32 bits or 4 bytes. It has unlimited value range and is used to save memory in large arrays of floating point numbers. It should not be used for variables with a precise value. 
+	Example: float f= 397.6f;
+
+   -->  Double datatype: It has a default value of 0.0d and has a size of 64 bits or 8 bytes. It also has unlimited value range. It is also used for decimal numbers just like float datatype. Double should never be used for variables with fixed values such as currency.
+	Example: double d= 26.9;
+
+   --> Char Datatype: This datatype is a single 16-bit or 2 byte Unicode character. Its value-range lies between '\u0000' (or 0) to '\uffff' (or 65,535). It has a default value '\u0000'. It is used to store the characters. The character values stored in it should always be within single quotes(' '). 
+	Example: char c= 'A';

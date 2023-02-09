@@ -1,0 +1,76 @@
+﻿Constructor Overloading
+	Java allows constructors to be overloaded just like methods. It is a technique of having multiple constructors with different parameter lists. In this, each constructor performs a different task, and is differentiated by the compiler on the basis of number of parameters in the list and their types.
+
+Example:
+	class Student{
+		int rollno;
+		String name;
+		int age;
+      	//creating two arg constructor
+		Student(int i,String n){
+rollno= i;
+name = n;
+}
+//creating three arg constructor
+Student(int i,String n,int a){
+rollno= i;
+name = n;
+age=a;
+}
+Student(String s){
+          name=s;}
+void display(){
+       System.out.println(rollno+" "+name+" "+age);}
+
+public static void main(String args[]){
+Student s1 = new Student5111,"Abhilash");
+Student s2 = new Student(222,"Aryan",25);
+Student s3 = new Student(“Arun”);
+s1.display();
+s2.display();
+s3.display();
+} }
+
+Output:
+	111 Karan 0
+      	222 Aryan 25
+	0 Arun 0
+
+In the above example, the Student class constructor is overloaded with three different constructors. This is the main purpose of constructor overloading when we use multiple constructors to initialize different values of the class. 
+
+--> The default constructor is not invoked if we have used any constructor in the class, whether it is default or parameterized. In this case, the java compiler throws an exception saying the constructor is undefined.
+
+Example:
+	public class Colleges {  
+	String collegeId;  
+Colleges(String collegeId){  
+this.collegeId = "IIT " + collegeId;   
+}  
+public static void main(String[] args) {  
+Colleges clg = new Colleges(); 		//this can't create colleges constructor now.  
+}}
+
+this() in constructor overloading
+
+	this keyword is used inside a constructor which is used to invoke the other constructor of the same class. 
+
+Example:
+	 class Student{
+		int id,year;
+		String name, college,number;
+		Student(String n, String s, int y){
+		this.number= n;
+		this.college= s;
+		this.year= y;}
+		Student(int id, String name){
+			this(“9876543210”, “IIT”, 2022);
+			this.id= id;
+			this.name=name;}
+		public static void main(){
+			Student s= new Student(11, “Abhilash”);
+			System.out.println(s.id+” “+s.name=” “+s.number+” “+s.college+” “+ s.year);
+}}
+
+
+Output:
+	11 Abhilash 9876543210 IIT 2022
