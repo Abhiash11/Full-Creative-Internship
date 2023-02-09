@@ -1,0 +1,178 @@
+﻿Static keyword
+	Static keyword in java is used for memory management. We can apply static keyword with variables, methods, blocks and nested classes. The static can be: Variable (also known as a class variable), Method (also known as a class method), Block and Nested class. 
+
+  i) Java static variables: 
+	--> These are the variables declared using static keyword.
+	--> It is used to represent a property which is common to all the objects. 
+	--> Static variable gets the memory only once, at the time of class loading.
+	--> Advantage is that it makes the program memory efficient.
+Example:
+	class Student{
+              int rollno;
+              String name;
+              String college="MIT"; }
+
+Consider the above example. There are numerous students in a college. Now in this, all the instance data members will be assigned a memory when the object is created. We know that name and rollno is unique for everyone, but the college is same property for all the objects. So if we make it as static, it will get the memory only once.
+Sample program:
+class Student{
+1.  int rollno;				//instance variable
+String name; 
+static String college ="MIT";			//static variable  
+
+//parameterized constructor
+   Student(int r, String n){
+   rollno = r;  
+   name = n;  
+}  
+           
+void display (){
+        System.out.println(rollno+" "+name+" "+college);}
+}  
+
+public class Test{
+ public static void main(String args[]){  
+ Student s1 = new Student(100,"Abhilash");  
+ Student s2 = new Student(198,"Hitesh");  
+
+ s1.display();  
+ s2.display();  
+ }}
+
+	Output: 
+100 Abhilash MIT
+198 Hitesh MIT
+
+
+  ii) Static Method:
+                        -->  A method created using a static keyword is called a static method. 
+                        --> it belongs to a class rather than object of the class. 
+	          --> It can be invoked without creating an instance of a class. 
+	          --> It can access static data members and can the value of it. 
+	Example: 
+		class Student{
+     int rollno;
+     String name;
+     static String college = "MIT";
+
+     Student(int r, String n){
+     rollno = r;
+     name = n;
+     }
+
+     void display(){
+	System.out.println(rollno+" "+name+" "+college);}
+ }
+  public class TestStaticMethod{
+    public static void main(String args[]){
+    
+    //creating objects
+    Student s1 = new Student(100,"Abhilash");
+    Student s2 = new Student(198,"Hitesh");
+    Student s3 = new Student(333,"Adarsh");
+    //calling display method
+    s1.display();
+    s2.display();
+    s3.display();
+    }
+}
+	          
+Output:
+	100 Abhilash MIT
+	198 Hitesh MIT
+	333 Adarsh MIT
+
+The above program was written without using a static method. Now if we want to access the static variable and change it's value, it can be done using a static method, as follows : 
+	Example:
+		class Student{
+     int rollno;
+     String name;
+     static String college = "MIT";
+     
+     static void change(){			//static method to change the values of static variable 
+     college = "Harvard";
+     }
+
+     Student(int r, String n){
+     rollno = r;
+     name = n;
+     }
+
+     void display(){
+	System.out.println(rollno+" "+name+" "+college);
+}
+}
+public class TestStaticMethod{
+    public static void main(String args[]){
+    Student.change();					//calling change method
+
+
+    //creating objects
+    Student s1 = new Student(100,"Abhilash");
+    Student s2 = new Student(198,"Hitesh");
+    Student s3 = new Student(333,"Adarsh");
+
+    //calling display method
+    s1.display();
+    s2.display();
+    s3.display();
+    }
+}
+
+  Output: 
+	100 Abhilash Harvard
+	198 Hitesh Harvard
+	333 Adarsh Harvard
+
+Example 2: 
+	class Calculate{
+  	static int square(int a){
+ 	 return a*a;
+  }
+
+  	public static void main(String args[]){
+  	int result=Calculate.square(5);				//calling static method
+  	System.out.println(result);
+  }
+}
+
+Output: 
+	Compile by: javac Calculate.java
+	Run by: java Calculate
+	25
+
+Restrictions for the static method
+	There are two main restrictions for the static method. They are:
+	 --> The static method can not use non static data member or call non-static method directly.
+  -->this and super cannot be used in static context.
+Note: Java main() method is also a static method because the object is not required to call a static method. If it were a non-static method, JVM creates an object first then call main() method that will lead the problem of extra memory allocation.
+  iii)Java static block: 
+	--> It is used to initialize the static data members.
+	--> It is executed before main() when the class is loaded. 
+Example:
+	class A{
+	static{
+	System.out.println("static block");}
+	public static void main(String args[]){
+   	System.out.println("Hello");
+  }}
+Output:
+	static block
+	Hello
+Note: We cannot execute a java class without a main method. Example:
+	class A{
+  	static{
+  	System.out.println("static block ");
+  	System.exit(0);}}
+Output:
+	Compile by: javac A3.java
+	Run by: java A3
+	Error: Main method not found in class A3, please define the main method as:
+	public static void main(String[] args)
+	or a JavaFX application class must extend javafx.application.Application
+
+
+	
+
+
+
+
