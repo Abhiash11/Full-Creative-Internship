@@ -66,13 +66,13 @@ public class Test{
     public static void main(String args[]){
     
     //creating objects
-    Student s1 = new Student(100,"Abhilash");
-    Student s2 = new Student(198,"Hitesh");
-    Student s3 = new Student(333,"Adarsh");
+    Student studentOne = new Student(100,"Abhilash");
+    Student studentTwo = new Student(198,"Hitesh");
+    Student studentThree = new Student(333,"Adarsh");
     //calling display method
-    s1.display();
-    s2.display();
-    s3.display();
+    studentOne.display();
+    studentTwo.display();
+    studentThree.display();
     }
 }
 	          
