@@ -1,0 +1,66 @@
+Methods with Variable Arguments list
+
+	also known as Varags, these  basically allow methods to have zero or no arguments. In the cases when we don't know how many variables are to be taken, Varags approach is better. These are the arguments that can accept variable number of values.
+--> Advantage of using varags is that we don't have to provide overloaded methods, so less code is required to write.
+
+Syntax for writing Varags:
+return_type method_name(data_type... variableName){}
+
+For example:
+	class Varagexample{
+		void display(String... values){
+			System.out.println(“display message”);
+			for(String s:values){
+			System.out.println(s);
+}}
+	public static void main(){
+		display();				// with zero argument
+		display(“Hi”);				// with one argument
+		display(“I”, “am”, “Siri”);		//with three arguments
+}}
+		
+
+Output:
+display message
+display message
+Hi
+display message
+I
+am
+Siri
+
+--> Rules for Varags
+i) There can only be one variable argument in the method
+ii) varag argument should be mentioned at last
+Failing above rules, it gives a compile time error.
+
+Example:
+void method(String... a,int... b){}/		/Compile time error
+
+void method(int... a, String b){} 			//Compile time error
+
+Sample program:
+
+class VarargsExample3{
+ static void display(int num, String... values){
+System.out.println("number is "+num);
+for(String s:values){
+System.out.println(s);
+ }}
+public static void main(String args[]){
+ display(500,"hello");					//one argument
+ display(1000,"my","name","is","varargs");			//four arguments
+ }
+}
+Output: 
+	   number is 500
+        	  hello
+       	  number is 1000
+       	  my
+       	  name
+       	  is 
+       	  varargs
+
+
+
+

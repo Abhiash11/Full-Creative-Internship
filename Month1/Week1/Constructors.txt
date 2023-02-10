@@ -1,0 +1,75 @@
+﻿Constructors
+	It is a special type of method which is used to initialize the objects and has block of codes similar to methods. It is called when an instance of a class is created. 
+--> Everytime an object is created using new keyword, at least one constructor is called.
+--> If there is no constructor available, Java calls a default constructor by default.
+--> It constructs the values at the time of object creation, this is why it is called a constructor. 
+
+--> Rules for writing a constructor:
+i) constructor name should be the same as class name
+ii) It should not have any return type
+Note: We can use access modifiers for constructors which control the object creation. 
+
+Types of constructors
+	There are two types of constructors depending upon the parameters passed:
+i) Non-parameterised or default constructors: They don't have any parameters
+Syntax:
+<class_name>(){
+...........}
+     For example:
+		class Phone{
+			Phone(){
+				System.out.println(“Phone created”);
+				}
+		public static void main(){
+			Phone p= new Phone();
+			}}
+
+     Output:
+	Phone created
+
+Purpose of a default constructor is to provide default values to the objects depending on their datatype.
+
+Example:
+	class Employee{
+		int id;
+		String name;
+		void print(){
+			System.out.prinln(“id+” ”+ name);}
+		public static void main(){
+			Employee e1= new Employee();
+			Employee e2= new Employee();
+			e1.display();
+			e2.display();
+		}}
+
+Output:
+	0 null
+	0 null
+
+As we have not created a constructor, Java provided us with a default constructor, with 0 and null as default values.
+
+ii) Parameterised constructors: They are the constructors with specific number of parameters. We can have any number of parameters in it, as per our convenience.
+We use parameterised constructors to provide different values to different objects. But we can also provide them with the same values also.
+	
+Example: 
+	class Employee1{
+		int id; String name;
+		Employee1(int n, String s){
+			name= s;
+			id=n;}
+		void show(){
+			System.out.println(id+ “ “ + name);}
+		public static void main(){
+			Employee1 e1= new Employee1(11, “Ayush”);
+			Employee1 e2= new Employee1(21, “Nitin”);
+			e1.display();
+			e2.display();
+		}}
+
+Output:
+	11 Ayush
+	21 Nitin
+			
+
+
+

@@ -1,0 +1,97 @@
+﻿Access Modifier
+
+   In Java, we use certain entities such as access modifiers or specifiers which allow us to control the scope or visibility of a class, method, variables, or other data members. This is the reason they are also known as “ visibility specifiers”. They also determine which data members of a class can be accessed by or be hidden from the other data members of classes or packages.
+
+Purpose:
+--> Code reusability
+--> Encapsulation
+
+The scope or visibility is broadly categorised in four types:
+i) inside class
+ii) inside package
+iii) outside package
+iv) outside package in a sub class
+
+Based on the above categories, there are 4 types of access modifiers:
+
+--> default:  This has no type of keyword. If we don't specify any type of modifier, then Java assumes it to be a default one. Any class, variable or method with a default specifier is accessible inside the class as well as all the classes inside a package, but it is not accessible outside a package. For example:
+
+class A{
+     void display(){                                                   // default modifier
+System.out.println(“ Showing with default scope”);
+}}
+class Main{
+public static void main(){
+       A obj= new A();                                            // accessing a class with default scope
+       obj.display();                                                 // accessing a method with default scope
+}}
+
+Output:
+Showing with default scope
+
+
+--> Public: Any class, method, constructor, or data member specified using a 'public' keyword is accessible from any class or package of a Java program. Basically, public access modifiers do not restrict the entity at all. For example
+
+
+class A{
+	public void display(){					//method with public access
+			System.out.println(“ Showing with public modifier”);
+			}}
+class Main{
+		public static void main(){
+			A obj= new A();
+			obj.display();				// accessing public method
+			}}
+
+Output:
+Showing with public modifier
+
+
+--> Protected:  This modifier allows access to entities within a class and within a package. But, it also allows access of entities to the subclasses as well, doesn't matter that subclass is inside a package or outside the package. They are usually used in parent child relationships
+Note: classes and interfaces cannot be protected
+
+Example:
+
+class A{
+	protected void display(){
+			System.out.println(“ printing example of protected modifier”);
+		}}
+class B extends A {}
+class C extends B{}
+
+class Main{
+		public static void main(){
+			B obj= new B();		//creating object of class B
+			obj.display();		// accessing protected method using obj
+			C obj1= new C();		// creating object of class C
+			obj1.display();		//accessing protected method using obj1
+}}
+
+Output:
+printing example of protected modifier
+printing example of protected modifier
+
+In the above example, a protected method display() is being used. Since B is a subclass of A, it can access display(). Similarly, C is a sub class of B, which is a sub class of A, that makes C as sub-subclass of A. Therefore, it can also access display(), irrespective of the class they are using it in. 
+
+
+--> Private: It has the lowest accessibility level. The methods and members that are declared using the keyword 'private' can only be accessed within a class in which they are declared. They are not even visible to the subclasses of a class. It ensures encapsulation. Classes and interfaces cannot be declared as private. For example:
+
+class A{
+
+	//private method and variable
+ 	private int n=10;
+	private void show(){
+		System.out.println(“This is the message.”);
+}}
+
+public class Main{
+	public static void main(){
+		A obj= new A();
+		System.out.println(obj.n);        // accessing private variable
+		obj.show();		       // accessing private method
+}}
+
+The above example will a compile time error as we try to access a private data member using class object. But there is a way to access private members. It is by using the concept of getter and setter.
+
+
+

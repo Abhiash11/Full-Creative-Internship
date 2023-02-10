@@ -1,0 +1,47 @@
+﻿CLASS VARIABLES, INSTANCE VARIABLES AND LOCAL VARIABLES IN JAVA
+	A variable is the name of a reserved area allocated in memory. In other words, it is a name of the memory location. It is a combination of "vary + able" which means its value can be changed.Based on scope in which a variable is declared, we classify them as class, instance and local variables.
+i) Class Variables:
+--> They are also known as static variables, as they are declared using a static keyword. 
+--> They are declared inside a class but outside of all methods.
+--> They belong to class and are common to all the objects in a class.
+Example: 
+class MyClass{
+static int myVar;}
+ii) Instance Variables:
+--> Instance variables are non-static variables and are defined in a class outside any methods.
+--> These variables are specific to each instance (object) of the class.
+Example: 
+ class MyClass {
+ int myVar;}
+      iii) Local Variables:
+-->Local variables are variables defined within methods or blocks in a class.
+--> Local variables are declared the same way as instance variables, except that they are declared within a method or block. Their scope is limited to that only, and have no existence outside the block.
+--> Unlike static or instance variables, local variables are not initialized by JVM with a default value. Hence, a local variable must be initialized before we try to use it. 
+
+Example 1:
+	class A{
+		static int b=10;				//Static variable or class variable 
+		void func(){
+		      int n=90; }				// local variable 
+		public static void main(String args[]){
+		     int c= 30; 				//instance variable 
+		}}
+
+Example 2:
+	public class VariableExample{
+	int a;						// instance variable
+  	 static int b = 50;					//class variable
+   	public static void main(String args[]){
+     		 int c = 1000;				//local variable 
+      		VariableExample obj = new VariableExample();
+     		 System.out.println("Value of instance variable : "+obj.a);
+     		 System.out.println("Value of static variable : "+VariableExample.b);
+      		System.out.println("Value of local variable: "+c);
+   }}
+
+Output
+Value of instance variable a: 0
+Value of static variable b: 50
+Value of local variable c: 1000
+
+

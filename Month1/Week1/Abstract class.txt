@@ -1,0 +1,83 @@
+﻿Abstract Class
+			
+	A class that is declared using 'abstract' keyword is known as abstract class. It can have abstract as well as non abstract methods.
+Need:- Whenever there is a case where different classes have the same function for the same purpose, but their working is different, like in the case of animals making sound. Then we need not create the same everytime. Because when we know that all the child classes will be overriding this method, it is better to make that class abstract. So that, we make it compulsory for the child classes to implement all the methods of this class and also have their own implementations as well. In such cases, we declare abstract classes and the concrete classes extend these classes and override the methods accordingly. 
+
+Example:
+
+// abstract parent class
+abstract class Animal{
+		public abstract void sound();
+}
+
+// Cat class extends parent class Animal
+public Cat extends Animal{
+		public void sound(){
+				System.out.println(“Meow!”);
+}
+public static void main(){
+			Animal obj= new Dog();
+			obj.sound();
+}}
+
+Output:
+Meow!
+
+Rules for declaring abstract method
+
+1) The cases where it is not necessary to implement all the methods of the abstract class, at that time declare parent as abstract which is not complete on its own. A class derived from abstract class must implement all the methods declared as abstract in parent.
+2) Abstract classes cannot be instantiated, which means that we cannot create the objects of the abstract classes. To do this, we need to create another class which is the extension of the abstract class along with the implementation of the abstract methods in it
+3) If the child class does not implement all the abstract methods of the parent, then the child also needs to be declared as the abstract class.
+
+
+Note: We cannot create objects of abstract classes because they are incomplete. They have abstract methods which have no body, so there will be nothing to implement if we try to call the abstract methods of the class. 
+
+For example:
+  
+   	abstract class AbstractDemo{
+   public void method1(){
+      System.out.println("Hello");
+   }
+   abstract public void method2();
+}
+public class Demo extends AbstractDemo{
+
+   public void method2() { 
+        System.out.print("Abstract method"); 
+   }
+   public static void main(String args[])
+   { 
+      //error: You can't create object of it
+      AbstractDemo obj = new AbstractDemo();
+      obj.amethod2();
+   }
+}
+Output:
+Unresolved compilation problem: Cannot instantiate the type AbstractDemo
+
+
+A class which is not abstract is called concrete class. Abstract class has no use unless it is extended by some other class as well. We cannot have an abstract method in a concrete class, while an abstract class can have non abstract methods.
+
+For example:
+
+	abstract class Demo{
+		public void show(){
+		  System.out.println(“Concrete method of parent class”);
+		 }
+		abstract void show2();
+}
+	class Demo2 extends Demo{
+			// must override abstract method
+		public void show2(){
+			System.out.println(“overriding abstract method”);
+		}
+		public static void main(){
+			Demo2 obj= new Demo2();
+			obj.show2();
+}}
+
+
+Output:
+
+overriding abstract method
+
