@@ -1,0 +1,33 @@
+﻿OOPs
+	 Object-Oriented Programming or OOPs refers to languages that use objects in programming, they use objects as a primary source to implement what is to happen in the code. Objects are seen by the user, performing tasks assigned by us. Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism etc. in programming. The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function. It allows users to create objects they want and create methods to handle those objects. The basic concept of OOPs is to create objects, re-use them throughout the program, and manipulate these objects to get results.
+
+Concepts of OOPs
+
+--> Class: It is one of the basic concepts of OOPs, which is basically a collection of similar objects. It is also called a blueprint of an object. It is only a logical entity so it does not occupy any space. For example: if we have a class called cars, it will have objects like Acura, BMW, Suzuki, etc. Its data can be speed, mileage, price,etc. And the functions performed with these objects can be driving, braking, reverse, etc. 
+
+--> Object: It is known as an instance of a class which is both physical and logical entity. There can be multiple instances of a class. Example: pen, table, chair,etc.
+
+--> Inheritance: It is a concept of OOP in which one object acquires the properties and behaviour of the parent object. It creates parent-child relationships between two classes. 
+
+--> Polymorphism: It is a concept by which an entity can perform a single task in multiple forms. For example, in English, the verb run has a different meaning if you use it with a laptop, a foot race, and business. 
+
+--> Abstraction: It is the concept of showing only the essential features without showing the background details or expressions. For example: while a user uses an app, he knows nothing about its background functionality, but only the essential features he wants. 
+
+--> Encapsulation: The wrapping up of data and functions into a single unit is called encapsulation. The variables of a class are always hidden from other classes. It can only be accessed using the methods of their current class. For example – in school, a student cannot exist without a class.
+
+--> Association: This represents the relationships between the objects. An object can be associated with many or one object. On that basis, it is categorised into 4 types: one-to-one, one-to-many, many-to-one and many-to-many. For example, One country can have one prime minister (one to one), and a prime minister can have many ministers (one to many). Also, many MP's can have one prime minister (many to one), and many ministers can have many departments (many to many).
+
+--> Aggregation: Aggregation is a way to achieve Association. Aggregation represents the relationship where one object contains other objects as a part of its state. For example consider class/objects department and teacher. Here, a single teacher can’t belong to multiple departments, but even if we delete the department, the teacher object will never be destroyed.
+
+--> Composition: The composition is also a way to achieve Association. The composition represents the relationship where one object contains other objects as a part of its state. There is a strong relationship between the containing object and the dependent object. It is the state where containing objects do not have an independent existence. If you delete the parent object, all the child objects will be deleted automatically. Take an example of House and rooms. Any house can have several rooms. One room can’t become part of two different houses. So, if you delete the house room will also be deleted.
+
+Advantages of OOPs: 
+
+i) It offers easy understanding and clear modular structures for programming.
+ii) Objects created for Object-Oriented Programs can be reused in other programs. Thus it saves significant development cost.
+iii) OOPs makes development and maintenance easier, whereas, in a procedure-oriented programming language, it is not easy to manage if code grows as project size increases.
+iv) OOPs provides the ability to simulate real-world event much more effectively. We can provide the solution of real word problem if we are using the Object-Oriented Programming language.
+
+
+
+
