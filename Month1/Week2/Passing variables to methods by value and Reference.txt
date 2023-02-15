@@ -1,0 +1,53 @@
+﻿Passing variables to methods
+	There are basically two types of techniques for passing the parameters in Java. The first one is pass-by-value and the second one is pass-by-reference. One thing to remember here is that when a primitive type is passed to a method, then it is done by the use of pass-by-value.
+However, all the non-primitive types that include objects of any class are always implicitly passed by use of pass-by-reference.
+Basically, pass-by-value means that the actual value of the variable is passed and pass-by-reference means the memory location is passed where the value of the variable is stored.
+
+ --> Pass by Value: It is a process in which the function parameter values are copied to another variable and instead this object copied is passed. This is known as call by Value.
+
+Example: Here we have initialized a variable ‘number’ with some value and used the pass-by-value technique to show how the value of the variable remains unchanged.
+
+	package week2;
+	public class PassByValue {
+	public static void main(String[] args) {
+	int number= 15;
+		System.out.println("value before calling display method: "+number);
+	display(number);
+	System.out.println("value after calling display method: "+number);
+}
+	public static void display(int num) {
+	System.out.println("value inside display method: "+num);
+	num=60;
+	System.out.println("value inside display method: "+num);
+}}
+
+Output:
+	value before calling display method: 15
+	value inside display method: 15
+	value inside display method: 60
+	value after calling display method: 15
+
+ --> Pass-by-reference: It is a process in which the actual copy of reference is passed to the function. This is called Pass by Reference. 
+Example: 
+	package week2;
+	public class PassByReference {
+	public static void main(String[] args) {
+	int value[]= {90,129};
+	System.out.println("value of first element before display method: "+value[0]);
+	display(value);
+	System.out.println("value of first element after display method: "+value[0]);
+}
+	public static void display(int[] num) {
+	System.out.println("first elememt inside display method is: "+num[0]);
+	num[0]= 100;
+	System.out.println("first elememt inside display method is: "+num[0]);
+}}
+Output:
+	value of first element before display method: 90
+	first elememt inside display method is: 90
+	first elememt inside display method is: 100
+	value of first element after display method: 100
+
+
+
+
