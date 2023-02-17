@@ -1,0 +1,116 @@
+﻿Arrays in Java
+	It is a collection of homogenous elements or similar type of elements stored in contiguous memory locations
+  --> We can store only a fixed set of elements in a Java array.
+  --> Array in Java is index-based, the first element of the array is stored at the 0th index, 2nd element is stored on 1st index and so on.
+
+Advantages:
+	--> It helps in code optimisation, as we can retrieve and sort data easily.
+	--> We can get data located at any index point in a memory
+Disadvantage: We can store only the fixed size of elements in the array. It doesn't grow its size at runtime.
+  --> There are two types of arrays: single dimensional and multi-dimensional arrays
+
+Syntax to Declare a single dimensional Array
+	dataType[] arr; (or)
+	dataType []arr; (or)
+	dataType arr[];
+ 
+  We can also declare, instantiate and initialise an array in a single line. For example:
+	
+	package week2;
+	class TestArray1{ 
+		public static void main(String args[]){ 
+			int a[]={33,3,4,5};			//declaration, instantiation and initialization 
+			for(int i=0;i<a.length;i++)
+				System.out.println(a[i]); 
+}} 
+Output:
+	33
+	3
+	4
+	5
+
+--> We can also write above program using a for-each loop. The Java for-each loop prints the array elements one by one. It holds an array element in a variable, then executes the body of the loop. Example:
+	for(int i:arr)
+		System.out.println(i);
+
+Passing Array to a Method
+	We can pass the  array to method so that we can reuse the same logic on any array.
+Example:
+	package week2;
+	class TestArray2{ 
+//creating a method which receives an array as a parameter 
+		static void min(int arr[]){ 
+			int min=arr[0]; 
+			for(int i=1;i<arr.length;i++) 
+			if(min>arr[i]) 
+			min=arr[i]; 
+			System.out.println(min); 
+} 
+	public static void main(String args[]){ 
+		int a[]={41,23,14,5};
+		min(a);//passing array to method 
+}} 
+
+Output:
+	5
+  --> In multidimensional array, data is stored in row and column based index (also known as matrix form). 
+Syntax to Declare Multidimensional Array 
+	dataType[][] arrayRefVar;  (or)
+	dataType [][]arrayRefVar;  (or)
+	dataType arrayRefVar[][];
+
+Example:
+	package week2;
+	class MultiArray1{
+		public static void main(String args[]){
+		//declaring and initializing 2D array
+		int arr[][]={{1,2,3,4},{2,4,5,7},{4,4,5,9}, {11,9,8,5}};
+		//printing 2D array
+		for(int i=0;i<4;i++){
+			for(int j=0;j<4;j++){
+			System.out.print(arr[i][j]+" ");
+	}
+		System.out.println();
+	}
+}}
+
+Output:
+	1 2 3 4 
+	2 4 5 7 
+	4 4 5 9 
+	11 9 8 5 
+
+Example: Addition of two matrices
+	package week2;
+	public class AdditionOfMatrices {
+		public static void main(String[] args) {
+		int[][] array1= {{2,3,6},{4,8,5},{7,9,0}};
+		int[][] array2= {{8,5,7},{2,9,11},{13,4,6}};
+		int sum[][]= new int[3][3];
+		for(int i=0; i<3; i++)
+	{
+			for(int j=0; j<3; j++) {
+			sum[i][j]= array1[i][j] + array2[i][j];
+			System.out.print(sum[i][j] +" ");
+	}
+			System.out.println();
+}}
+}
+
+Output:
+	10 8 13 
+	6 17 16 
+	20 13 6 
+
+
+
+
+
+
+
+
+
+	
+
+	
+
