@@ -1,0 +1,44 @@
+﻿Primitive Type casting
+	Conversion of one primitive data type to another primitive datatype is known as primitive type casting. It occurs mainly with numeric datatypes. There are two types of type casting: Widening Type Casting and Narrowing Type Casting. 
+	
+   --> Widening Type Casting: Converting a lower data type into a higher one is called widening type casting. It is also known as implicit conversion or casting down. It is done automatically. It is safe because there is no chance to lose data.
+It only happens when both the datatypes are compatible and the target datatype is of larger size.
+
+Hierarchy to be followed: byte -> short -> char -> int -> long -> float -> double
+
+For Example:
+	package week2;
+	public class WideningTypeCasting {
+	public static void main(String[] args) {
+	int a=9;
+	long b=a;
+	float c=b;
+	System.out.println("Before conversion, int value is: "+a); 
+	System.out.println("After conversion, long value is: "+b); 
+	System.out.println("After conversion, float value is : "+c); 
+}}
+
+Output:
+	Before conversion, int value is: 9
+	After conversion, long value is: 9
+	After conversion, float value is : 9.0
+
+   --> Narrowing Type Casting: Converting a higher data type into a lower one is called narrowing type casting. It is also known as explicit conversion or casting up. If it is not performed by the programmer, then the compiler reports a compile time error. 
+Hierarchy to be followed: double -> float -> long -> int -> char -> short -> byte
+
+For Example:
+	package week2;
+	public class NarrowingTypeCasting {
+	public static void main(String[] args) {
+	double a= 127.8;
+	long b= (long)a;
+	int c= (int)b;
+	System.out.println("before conversion:"+a);
+	System.out.println("After conversion to long type: "+b);
+	System.out.println("After conversion to int type: "+c);
+}}
+Output:
+	before conversion:127.8
+	After conversion to long type: 127
+	After conversion to int type: 127
+

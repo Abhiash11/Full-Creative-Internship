@@ -1,0 +1,101 @@
+﻿Encapsulation
+	The wrapping of data and methods into a single unit is known as encapsulation.For example: a capsule is encapsulated with many types of medicines. A fully encapsulated class is created by making all the data members as private. Then we access them using getter and setter methods. 
+
+Advantages:
+   --> It provides us the control over the data. Like if we want to set the value of id which should be greater than 100 only, a logic can be written inside the setter method. We can also  write the logic not to store the negative numbers in the setter methods.
+   -->  It also enables data hiding as other classes will not be able to access private data members. 
+   --> Flexible: the programmer can change one part of the code without affecting other parts
+   --> The encapsulate class is easy to test. So, it is better for unit testing.
+
+Disadvantages:
+1. Can lead to increased complexity, especially if not used properly.
+2. Can make it more difficult to understand how the system works.
+3. May limit the flexibility of the implementation.
+
+Example:  File: Student.java
+	package week2;
+	public class Student{
+	private String name;				//private data member
+	public String getName(){				//getter method for name
+	return name;
+}
+	public void setName(String name){		//setter method for name
+	this.name=name;
+}}
+
+File: Test.java
+
+	package week2;
+	class Test{
+	public static void main(String[] args){
+	Student s=new Student();					//creating instance of the encapsulated class
+	s.setName("Abhilash");					//setting value 
+	System.out.println(s.getName());				//getting value
+}}
+
+Output:
+	Abhilash
+
+Read Only Class
+	//A Java class which has only getter methods.
+	public class Student{
+	private String college="MIT”; 				//private data member
+	public String getCollege(){				//getter method for college
+	return college; 						
+}} 
+
+With the above line of codes, we cannot change the value of college now as it has only get method. So, it will only be able to read the file. If we use the below line in 
+			s.setCollege("IMS");
+it will throw a compilation error as there is no set method.
+
+Write-Only Class
+	//A Java class which has only setter methods.  
+	public class Student{  
+	private String college;					//private data member
+	public void setCollege(String college){			//setter method for college
+	this.college=college;
+	}}
+
+
+Now with the above lines, we cannot get the value of college data member. We can only set the value for college. If we try to use
+		System.out.println(s.getCollege());
+it will throw a compile time error as there is no method named getCollege(). And if we try to print college using
+		System.out.println(s.college);
+it will again throw a compile time error as we are trying to access a private data member. So it cannot be accessed outside the class.
+
+Example2:
+	class Employee {
+	private int Employee_id;
+	private String name;
+	
+	public int getId() {
+		return Employee_id;
+	}
+	public void setId(int e_id) {
+		this.Employee_id= e_id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String e_name) {
+		this.name= e_name;
+	}
+}
+class Main{
+	public static void main(String[] args) {
+		Employee e= new Employee();
+		e.setId(114981);
+		e.setName("Abhilash");
+		System.out.println("Employee data:" + "\n Employee ID: " +e.getId()+ "\n Employee name: " +e.getName());
+
+	}
+}
+
+Output:
+	Employee data:
+ 	  Employee ID: 114981
+   	  Employee name: Abhilash
+
+
+	

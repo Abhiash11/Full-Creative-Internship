@@ -1,0 +1,230 @@
+﻿Inheritance
+	It is an important concept of OOPs in which one object acquires all the properties and behaviour of its parent object. The main purpose behind this is that we can have new classes that are build upon existing classes. So when we inherit from existing classes, we can reuse all the variables and methods of the parent class. Even we can also add our own methods and variables to new class.  This ensures code reusability. Inheritance represents the IS-A relationship which is also known as a parent-child relationship. 
+
+Uses:- 
+	--> for method overriding, so that we can achieve runtime polymorphism
+	--> for reusing code- it is a mechanism which lets us to reuse the fields and methods of the existing class when we create a new class. We  can use the same fields and methods already defined in the previous class.
+
+The terms super/parent class and sub/child classes are often used with the concept of inheritance. Super/parent class is the class from where a subclass inherits the features. Sub/child class is the class which inherits the other class. Basically, a class which is inherited is called a parent or superclass, and the new class is called child or subclass. 
+
+Syntax:
+	class subclass_name extends superclass_name{
+		//methods and variables
+	}
+The extends keyword indicates that  a new class is made that derives from an existing class. It increases functionality. 
+For Example:
+	If we take an two classes, Engineer and Employee1, we know that engineer is a type of an employee. Therefore, the relationship between two classes is Engineer IS-A Employee1. That makes Employee1 as super class and Engineer as sub or derived class. 
+	package week2;
+	class Employee1{
+	double salary = 45000;
+}
+	public class Engineer extends Employee1 {
+		int bonus= 5000;
+		public static void main(String[] args) {
+		Engineer e= new Engineer();
+		System.out.println("Salary is: " +e.salary);
+		System.out.println("Bonus is: " +e.bonus);
+}}
+
+Output:
+	Salary is: 45000.0
+	Bonus is: 5000
+
+Types of Inheritance
+	On the basis of class, there can be three types of inheritance in java: single, multilevel and hierarchical.
+In java programming, multiple and hybrid inheritance is supported through interface only. 
+
+--> Single Inheritance: When a class inherits another class, it is known as single inheritance. Like a Child class inherits Human class, so there is single inheritance.
+For Example: 
+	package week2;
+	class Human{
+	void breathe() {
+	System.out.println("breathing...");
+	}
+	}
+	class Child extends Human {
+	void eat() {
+	System.out.println("eating...");
+}}
+	class Inheritance2{
+	public static void main(String[] args) {
+	Child c= new Child();
+	c.eat();
+	c.breathe();
+}}
+
+Output: 
+	eating...
+	breathing...
+
+--> Multi-level Inheritance: When there is a chain of inheritance, it is known as Multilevel Inheritance. Like a Child2 class inherits Parent class, which also inherits Human1 class.
+For Example:
+	package week2;
+	class Human1{
+	void breathe() {
+	System.out.println("breathing...");
+	}
+	}
+	class Parent extends Human1 {
+	void eat() {
+	System.out.println("eating...");
+}}
+	class Child1 extends Parent{
+	void cry() {
+	System.out.println("crying...");
+}}
+	public class Inheritance1 {
+	public static void main(String[] args) {
+	Child1 c= new Child1();
+	c.breathe();
+	c.eat();
+	c.cry();
+	}}
+Output:
+	breathing...
+	eating...
+	crying...
+
+--> Hierarchical Inheritance: When two or more classes inherit a single class, it is known as Hierarchical Inheritance. Like in the below example, Parent1 class inherits Human2 class. And Child2 class also inherits Human2 class. So, there is hierarchical inheritance. 
+For Example: 
+	package week2;
+	class Human2{
+	void breathe() {
+	System.out.println("breathing...");
+}}
+	class Parent1 extends Human2 {
+	void eat() {
+	System.out.println("eating...");
+}}
+	class Child2 extends Human2{
+	void cry() {
+	System.out.println("crying...");
+}}
+	public class HieInheritance {
+	public static void main(String[] args) {
+	Child2 c= new Child2();
+	c.breathe();
+	c.cry();
+}}
+Output:
+	breathing...
+	crying...
+If we try to call eat() method, it will throw a compile time error as the object created is child.
+
+--> Multiple inheritance through interfaces:
+	In Multiple inheritances, one class can have more than one superclass and inherit features from all parent classes. Java does not support multiple inheritances with classes. In java, we can achieve multiple inheritances only through Interfaces.
+Example:	
+	package week2;
+	interface A{
+	void print();}
+	interface B{
+	void show();}
+	public class MultipleInheritance implements A,B {
+		public void print()
+	{
+			System.out.println("message of A");
+	}
+		public void show()
+	{
+			System.out.println("message of B");
+	}
+		public static void main(String[] args) {
+		MultipleInheritance obj= new MultipleInheritance();
+		obj.print();
+		obj.show();
+}}
+
+Output:
+	message of A
+	message of B
+
+--> Hybrid Inheritance(through Interfaces):
+	It is a mix of two or more of the above types of inheritance. Since java doesn’t support multiple inheritances with classes, hybrid inheritance is also not possible with classes. In java, we can achieve hybrid inheritance only through Interfaces.
+
+Super Keyword: The super keyword is similar to this keyword. It is used to differentiate between the members of the superclass from the members of the subclass, provided if they have same name.
+Example:
+	package week2;
+	class Super_class {
+	int num = 25;
+	// display method of superclass
+	public void display() {
+	System.out.println("display method of superclass");
+	}
+	}
+	public class Super_keyword extends Super_class {
+	int num = 17;
+	// display method of sub class
+	public void display() {
+	System.out.println("display method of subclass");
+}
+	public void my_method() {
+	Super_keyword sub = new Super_keyword();
+	super.display();
+	sub.display();
+		// printing the value of variable num of subclass
+	System.out.println("value of the variable named num in sub class:"+ sub.num);
+		// printing the value of variable num of superclass
+	System.out.println("value of the variable named num in super class:"+ super.num);
+}
+	public static void main(String args[]) {
+	Super_keyword obj = new Super_keyword();
+	obj.my_method();
+}
+}
+Output:
+	display method of superclass
+	display method of subclass
+	value of the variable named num in sub class:17
+	value of the variable named num in super class:25
+
+In the given program, we have two classes namely Super_keyword and Super_class, both have a method named display() with different implementations, and a variable named num with different values. We are invoking display() method of both classes and printing the value of the variable num of both classes. Here we can observe that we have used super keyword to differentiate the members of superclass from subclass.
+
+Aggregation:
+	If a class have an entity reference, it is known as Aggregation. Aggregation represents HAS-A relationship. For example, there is an object Student which contains many informations like class, dob, name,etc. But it contains one more object named address, which in itself contains info like city, state, pincode, etc. In such case, Student has an entity reference address, so relationship is Employee HAS-A address. It is mainly used for reusing the code. 
+For example:
+	Address.java
+
+	package week2;
+	public class Address {
+	String city,state,country; 
+	public Address(String city, String state, String country) { 
+	this.city = city; 
+	this.state = state; 
+	this.country = country; 
+} }
+
+Student1.java
+	package week2;
+	public class Student1 {
+	int id; 
+	String name; 
+	Address address; 
+	public Student1(int id, String name,Address address) { 
+	this.id = id; 
+	this.name = name; 
+	this.address=address; 
+	} 
+	void display(){ 
+	System.out.println(id+" "+name); 
+	System.out.println(address.city+" "+address.state+" "+address.country); 
+} 
+	public static void main(String[] args) {
+	Address address1=new Address("lko","UP","india"); 
+	Address address2=new Address("hyd","TLG","india"); 
+	Student1 one=new Student1(11, "Abhilash",address1 ); 
+	Student1 two=new Student1(22, "Uttej",address2); 
+	one.display(); 
+	two.display(); 
+}}
+Output:
+	11 Abhilash
+	lko UP india
+	22 Uttej
+	hyd TLG india
+
+
+
+
+
+
+

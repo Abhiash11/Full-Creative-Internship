@@ -1,0 +1,75 @@
+Static Block
+	A static block is a block created using static keyword. It can be used to initialise static data members, hence, it is also known as initialisation block. 
+  --> It always executes before object initialisation, i.e. It always executes before the main() method. 
+  --> No matter in what order it is there in a piece of code, static block will always execute first
+  --> Static block code executes only once during the class loading. The static blocks always execute first before the main() method in Java because the compiler stores them in memory at the time of class loading and before the object creation.
+  --> A class can have multiple static blocks, and they will execute in the same order as they appear in the class.
+
+Example:
+	package week2;
+	class Demo{
+		static int val;
+		int val_2;
+		static{
+			val = 45;
+			System.out.println("The static block has been called.");
+	}}
+	public class StaticBlock1{
+		public static void main(String args[]){
+		System.out.println(Demo.val);
+}}
+Output:
+	The static block has been called.
+	45
+As we can see above, static block has been created to initialize the static variable 'val', along with some print statement. Now in the output, we can see that static block is executed before object creation 'Demo'.
+Note: Static blocks cannot access instance (non-static) variables and methods.
+Advantages of static blocks
+1. The logic to be executed during the class loading before executing the main() method can be in a static block.
+2. Static blocks are mainly used to initialise the static variables.
+
+Example:
+	package week2;
+	class Static {
+	static int i;
+	int j;
+	static
+		{
+		i = 10;
+		System.out.println("static block 1 called ");
+	}
+	// Constructor calling
+	Static() {
+		System.out.println("Constructor called"); 
+	}
+	Static(int a){
+		System.out.println("Constructor called for variable a: " +a);
+}
+	static {
+		System.out.println("static block 2 called ");
+}
+	public static void main(String args[])
+{
+		Static t1 = new Static();
+		Static t2 = new Static(5);
+	}}
+
+Output:
+	static block 1 called 
+	static block 2 called 
+	Constructor called
+	Constructor called for variable a: 5
+
+Since the static block is always executed first, it doesn't matter in which order it's placed within the class. Typically, you would want to have the static block listed before constructors for readability, but Java technically does not care. However, Java will process the static block codes in order.
+
+Why static block cannot access non-static variables?
+
+When we try to access non-static variable from a static block, it throws a compilation error because for instance variables, an object instance is required to call those variables. Now we can also have multiple objects with different values for that non-static variable. So here the cases arises when different objects have different values for the same variable. So there will be ambiguity for the compiler to understand which value should it take. In order to avoid that, we get a compile time error. Therefore, we always need to create an object in order to refer to non-static variables from a static context. Whenever a new instance is created, a new copy of those instance variables and methods is created, and using those reference, we can access these variables. 
+
+
+
+
+
+
+
+
+
