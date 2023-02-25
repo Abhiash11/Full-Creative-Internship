@@ -1,0 +1,270 @@
+﻿Operators in Java
+	Operators are symbols that perform operations on variables and values. For example, + is an operator used for addition, while * is also an operator used for multiplication. Operators are the constructs that can manipulate the values of the operands. There are many types of operators in Java which are given below:
+Unary Operator,
+Arithmetic Operator,
+Shift Operator,
+Relational Operator,
+Bitwise Operator,
+Logical Operator,
+Ternary Operator and
+Assignment Operator.
+
+ --> Arithmetic Operators: These are the operators which are used to perform mathematical operations like addition, subtraction, multiplication, etc. They are of several types:
+i) Addition Operator(+) : Adds the left operand with the right operand and returns the result. For eg:
+int a=10;
+		int b=5;
+		int c = a=b; //15
+ii) Subtract Operator(-) : Subtracts the left operand and right operand and returns the result. For eg:
+int a=10;
+		int b=5;
+		int c = a-b; //5
+iii) Multiplication Operator(*) : It multiples the left and right operand and returns the result. For eg:
+int a=2;
+		int b=3;
+		int c=a*b; //6
+iv) Division Operator(/) : Divides the left operand with the right operand and returns the result. For eg: 
+int a=10;
+		int b=5;
+		int c=a/b; //0
+v) Modulo Operator(%) : Divides the left operand with the right operand and returns the remainder. For eg:
+int a=10;
+		int b=5;
+		int c=a/b; //2
+Example:
+	package week3;
+	public class ArithmeticOperator
+{
+	public static void main (String[]args)
+{
+		int A = 35;
+		int B = 10;
+		System.out.println (A + B);
+		System.out.println (A - B);
+		System.out.println (A * B);
+		System.out.println (A / B);
+		System.out.println (A % B);
+}}
+Output:
+	45
+	25
+	350
+	3
+	5
+
+ --> Assignment Operators: The Java assignment operator is used to assign the value on its right to the operand on its left. They are of several types:
+i) = : Assign the right operand to the left operand. For eg:
+int b=20;
+a+=4; //a=a+4 (a=10+4)
+
+	       ii) += : Adding left operand with right operand and then assigning it to variable on the left. For eg:
+
+		a += 5; //a=a+5;
+
+iii) -= : subtracting left operand with right operand and then assigning it to variable on the left. For eg:
+
+		a -= 5; //a=a-5;
+
+iv) *= : multiplying left operand with right operand and then assigning it to the variable on the left. For eg:
+
+	               a *= 5; //a=a*5;
+
+v) /= : dividing left operand with right operand and then assigning it to a variable on the left. For eg:
+
+		a /= 5; //a=a/5;
+
+vi) %= : assigning modulo of left operand with right operand and then assigning it to the variable on the left. For eg:
+
+		a %= 5; //a=a%5;
+
+For example: 
+	package week3;
+	public class AssignmentOperator
+{
+	public static void main (String[]args)
+{
+		int a = 10;
+		int b = 20;
+		int c;
+		System.out.println (c = a); 
+		System.out.println (b += a); 
+		System.out.println (b -= a); 
+		System.out.println (b *= a); 
+		System.out.println (b /= a); 
+		System.out.println (b %= a); 
+}}
+
+Output:
+	10
+	30
+	20
+	200
+	20
+	0
+
+ --> Relational Operators : The Relational Operators in Java are also known as Comparison Operators. It determines the relationship between two operands and returns the Boolean results, i.e. true or false after the comparison. Following are different types of it:- 
+	
+Equal to
+==
+returns true of the left-hand side is equal to the right-hand side.
+5==3 is evaluated to be false.
+Not Equal to
+!=
+returns true of the left-hand side is not equal to the right-hand side.
+5!=3 is evaluated to be true.
+Less than
+<
+returns true of the left-hand side is less than the right-hand side.
+5<3 is evaluated to false
+Less than or equal to
+<=
+ returns true of the left-hand side is less than or equal to the right-hand side.
+5<=5 is evaluated to be true
+Greater than
+>
+returns true of the left-hand side is greater than the right-hand side.
+5>3 is evaluated to be true
+Greater than or Equal to
+>=
+returns true of the left-hand side is greater than or equal to the right-hand side.
+5>=5 is evaluated to be true
+
+Example:
+	package week3;
+	public class RelationalOperator
+{
+	public static void main (String[]args)
+{
+		int a = 5;
+		int b = 2;
+		System.out.println (a == b); 
+		System.out.println (a != b); 
+		System.out.println (a > b); 
+		System.out.println (a < b); 
+		System.out.println (a >= b); 
+		System.out.println (a <= b); 
+}}
+Output:
+	false
+	true
+	true
+	false
+	true
+	false
+
+  --> Logical Operators : The Logical Operators in Java are mainly used in conditional statements and loops for evaluating a condition. They are basically used with binary numbers. 
+i) Logical OR( || ): It returns true if either of the Boolean expressions is true.
+ii) Logical AND ( && ): It returns true if all the Boolean Expressions are true.
+Example:
+	package week3;
+	public class LogicalOperator
+{
+	public static void main (String[]args)
+{
+	int a = 10;
+	System.out.println (a < 10 && a < 20); 
+	System.out.println (a < 10 || a < 20); 
+	System.out.println (!(a < 10 & a < 20)); 
+}}
+Output:
+	false
+	true
+	true
+
+  --> Unary Operators : The Unary Operators in Java need only one operand. They are used to increment, decrement, or negate a value.
+i) Increment Operator (++): It is used for incrementing the value by 1. For eg:
+int a=5.2;
+		int b = ++a; //6.2
+		
+		They are of two types:
+		--> Post Increment Operator :Value is first used for computing the result and then incremented. It 		      works on use then change rule. Example:
+		int b = 10, c = 0;
+		c=b++;
+		System.out.println(“Value of c (b++) = “ +c); // 10
+
+		--> Pre Increment Operator: Value is incremented first and then result is computed. It works on 			       change then use rule. Example:
+			int a = 20, c = 0;
+			c=++a;
+			System.out.println(“Value of c (++a) = “ +c); // 21
+
+ii) Decrement Operator ( -- ): It is used to decrement the value by 1. For eg:
+int a=5.2;
+		int b = --a; //4.2
+		
+		They are of two types:
+		--> Post Decrement Operator : Value is first used for computing the result and then decremented. 		       Example:
+			int e = 40, c = 0;
+			c=e–;
+			System.out.println(“Value of c (e–) = “ +c); // 40
+
+		--> Pre Decrement Operator : Value is decremented first and then result is computed. Example:
+			int d = 20, c = 0;
+			c= -- d;
+			System.out.println(“Value of c (–d) = “ +c);   //19
+
+Example:
+	package week3;
+	public class UnaryOperator
+{
+	public static void main (String[]args)
+{
+		int a = 10;
+		System.out.println (a++); 
+		System.out.println (++a);
+		System.out.println (a--);
+		System.out.println (--a);
+}}
+Output:
+	10
+	12
+	12
+	10
+
+  --> Ternary Operator : The Ternary Operator in Java is also known as the Conditional Operator. It is the shorthand of the if-else statement. It is the one-liner replacement of the if-else statement in Java. It is called ternary because it has three operands. The general format of the ternary operator is: Condition ? if true : if false
+The above statement means that if the condition evaluates to true, then execute the statements after the ‘?’ else execute the statements after the ‘:’.
+Example:
+Int a=2;
+int b=5;
+int c = (a<b)?a:b;
+
+Example:
+	package week3;
+	public class ConditionalOperator
+{
+	public static void main (String[]args)
+{
+		int a = 20, b = 10, c = 30, result;
+		result = ((a > b) ? (a > c) ? a : c : (b > c) ? b : c);
+		System.out.println ("Max of three numbers is = " + result);
+}}
+
+Output:
+	Max of three numbers is = 30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	
+
+
+
+
+
+
+
+
